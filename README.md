@@ -92,3 +92,22 @@ the machine learning process invlolve building  a predictive modle that can be u
 - main aim is to group similar items clusters 
 - eg find all transaction which are floudulent in nature 
 - algorimt K-means 
+
+## SUPERVISED LEARNING ALGORITHMS 
+- linear regression 
+- logistic regression 
+- decision tree 
+- random forest 
+- naive bayes classifier 
+- k nearest naighores 
+- support vector mahcines 
+
+
+## LINEAR REGRESSION 
+
+linear regression is a method to predict dependent vairable based on values of independent varaibles . it can be used for the cases where we want to predict some continous quanity . 
+- DEPENDENT VARAIBLE (Y):
+the response variable whos value needs to be predcited. 
+- INDEPENDENT VALIABLE(X):
+the predictor varaile used to predict the response varaible 
+
