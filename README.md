@@ -111,3 +111,8 @@ the response variable whos value needs to be predcited.
 - INDEPENDENT VALIABLE(X):
 the predictor varaile used to predict the response varaible 
 
+
+## LOGISTIC REGRESSION 
+logistic regresssion is a method used to predict a dependent variable, given a set of independent variables , such that the depenent varaibles is catagorical . 
+
+## DECISION TREE 
