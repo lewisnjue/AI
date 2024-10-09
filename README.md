@@ -116,3 +116,95 @@ the predictor varaile used to predict the response varaible
 logistic regresssion is a method used to predict a dependent variable, given a set of independent variables , such that the depenent varaibles is catagorical . 
 
 ## DECISION TREE 
+
+
+## SEARCH ALGORITHM 
+
+
+lets start at looking at some terminology 
+
+- AGENT - >  entity that perceives its enviroment and acts upon that enviroment . 
+
+- STATE -> a configuration of the agent and its enviroment . 
+
+- INITIAL STATE -> the state in which the agent begins . 
+- ACTIONS -> choices that can be made in state .
+
+actions(s) returns the st og actions that can be executed in state s . 
+
+- TRANSISON MODEL -> a description of what state results from performing any applicable action in any state. 
+
+result(s,a) returns the state resulting from performing actions a in state s. 
+
+- STATE SPACE -> the set of all states reachable from the initial state by any sequence of actions . 
+
+- GOAL TEST -> way to determine whether a given state is a goal state . 
+
+- PATH COST -> numerical const accocaited with a given path . 
+
+a search problmes have the following 
+
+- inital state 
+- actions 
+- transisiton model 
+- goal test 
+- path const function 
+
+solution -> a sequence of actions that leads from the initail stat e to a goal state . 
+
+optimal solution ->  a solution that ahs the lowest path cost among all solutions . 
+
+## NODE 
+a node is a data structure that keeps track of : 
+- a state . 
+- a parent ( node that generated this node)
+- an action ( action applied to parent to get node)
+- a path const ( frominitaila state to node )
+
+## APPROACH 
+
+- start with a frontier that contains the initial state. 
+- repeat : 
+    - if the frontier is empty , then no solution 
+    - remove a node from the frontier . 
+    - if node contains goal state, return the solution . 
+    - expand node , add resulting nodes to the frontier 
+
+## REVISED APPROACH 
+
+- start with a frontier that continas the initial state. 
+- start with an empty explored set . 
+- REPEAT: 
+    - if the frontier is empty , then no solution . 
+    - remove a node from the frontier . 
+    - if node contins goal state , return the solution 
+    - add the node to the exproled set , 
+    - expand node , add resuting ndoes to the frontier if they arent aleready in th frontier or the explored set , 
+
+
+## REVOVING A NODE IN THE FRONTIER : 
+
+there are diffrent ways to remove a node from the frontier one of themis : 
+- stack : LAST IN FIRS OUT DATA TYPE ,
+this version of algoritm is called depth first search , please dont forget that 
+
+depth first search is a search algortm that always expands the deepest neod in the frontier . 
+
+another seach algorith is called breadth first search 
+
+this search algorithm that always expandas the shallwest node in the frontier  . 
+
+- queue is used in breath first search , first in first out data type . 
+
+## UNINFORMED SEARCH 
+
+search strategy that uses no problme specific knowledge . 
+
+## INFORMED SEARCH 
+
+search straregy that uses problem specific knowledge to find solutions more efeciently . 
+
+### GREEDY BEST FIRST SEARCH 
+
+search algorithm that expands the node that is closest tot he goal, as estimated by a heuristic fuction h(n)
+
