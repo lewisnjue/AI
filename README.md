@@ -208,3 +208,24 @@ search straregy that uses problem specific knowledge to find solutions more efec
 
 search algorithm that expands the node that is closest tot he goal, as estimated by a heuristic fuction h(n)
 
+
+### A * SEARCH 
+
+search algorithm that expands node with lowest valeu of g(n) + h(n)
+
+g(n) = cost of reach node 
+
+h(n) = estimated cost to goal 
+
+a * search is optimal if : 
+- h(n) is admissible ( never overestimates teh true cost ) and 
+
+- h(n) is consistent ( for every node n and succeossor n  with sept cosnt c, h(n)<= h(npatent) + c)
+
+
+## MINMAX ALGORITHM 
+
+MAX(X) amis to mazimize score. 
+MIN(O) aimst o minimize score . 
+
+
