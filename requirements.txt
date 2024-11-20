@@ -1,0 +1,6 @@
+torch 
+torchinfo
+pandas 
+numpy
+matplotlib
+numpy
