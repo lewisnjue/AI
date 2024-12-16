@@ -76,3 +76,31 @@ we motly use logical connectives using a true table.
 |true|false|false|
 |true|true|true|
 
+**model**: assignment of a truth value to every propositional sysmbol(a `possible world`)
+
+for example 
+p: it is raining,
+q: it is tuesday.
+
+
+(p=true,q=false)
+what does this is a model.
+
+
+if there are n sentensene there can be 2^n models. 
+
+**knowledge base**:
+
+a set of sentences known by a knowledge-based agent. 
+
+**Entailment**: look at the symbol online: |= 
+
+for example alpha entails beta
+
+in every model in which sentence alpha is true, sentence beta is also true. 
+
+
+**inference**
+the process of deriving new sentences from old ones. 
+
+
