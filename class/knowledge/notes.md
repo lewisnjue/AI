@@ -103,4 +103,15 @@ in every model in which sentence alpha is true, sentence beta is also true.
 **inference**
 the process of deriving new sentences from old ones. 
 
+there are different algorithm used in this can one of them is:
+*model checking*
+
+to determine if KB|= alpha:
+    - enumerate all possible models. 
+    - if in every model where KB is true , apha is true, then KB entains alpha. 
+    - otherwise ,KB does not entail apha. 
+
+this process is called knowledge engineering 
+
+
 
