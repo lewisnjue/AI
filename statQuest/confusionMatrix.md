@@ -4,8 +4,9 @@ a confusitn matrix is a performance evalutin metric used for classification mode
 **metrics derived from confusion matrix**
 from the confustin matrix, we can cacluate key classification metrics: 
 - accuray = TP + TN / (TP+TN+FP+FN)
-- precision = TP/(TP+FP) (how many predicted positives wer actually correct?)
+- precision = TP/(TP+FP) (how many predicted positives wer actually correct?) => this is sensitivity 
 - recall(sensitivity) = TP/(TP+FN) (how many acutl postives were correctly predicted?)
+- specificity = TN / (TN + FP)
 - f-score: harmonic mean of precision and recall. 
 exmple using sklearn 
 
