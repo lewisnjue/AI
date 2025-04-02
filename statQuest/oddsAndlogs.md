@@ -65,3 +65,51 @@ logits = log(p/1-p)
 where p is teh probabilty of the postive classs.
 
 when you are converting to probabily in log-odds you will use sigmoid but for logits in deep learning you will use sigmoid for binary or sofamx(muli-class ) and i hope you know what we do in softmax .
+
+# Odds Ratio and Statistical Significance in Machine Learning
+
+## 1. Odds Ratio (OR) Definition
+The odds ratio compares the odds of an event between two groups:
+
+For a 2×2 contingency table:
+
+|               | Event Yes | Event No |
+|---------------|----------|----------|
+| **Group 1**   | a        | b        |
+| **Group 0**   | c        | d        |
+
+## 2. Interpretation
+- OR = 1: No association
+- OR > 1: Increased odds in Group 1
+- OR < 1: Decreased odds in Group 1
+
+## 3. Testing Statistical Significance
+
+### Chi-Squared Test
+```python
+from scipy.stats import chi2_contingency
+table = [[a, b], [c, d]]
+chi2, p, dof, expected = chi2_contingency(table)
+
+
+from scipy.stats import fisher_exact
+odds_ratio, p_value = fisher_exact(table)
+
+import statsmodels.api as sm
+model = sm.Logit(y, X).fit()
+print(model.summary())  # Look for p-values and ORs (e^coefficients)
+
+R² = 1 - (log likelihood model)/(log likelihood null)
+
+h = 2*arcsin(√p₁) - 2*arcsin(√p₂)
+
+```
+
+**key takeawys**
+
+1. OR quantifiers associated strenght 
+2. use chi-squared for large sampels, fishers for small. 
+3. logistic regression provides adjusted ORs. 
+4. always check confidence intervals.
+
+5. preseudo R^2 gives model fi (but interpret cautionsly)
