@@ -93,3 +93,74 @@ plt.show()
 
 ```
 
+
+
+## pca vs umap 
+
+theya re not similar umap(uniform manifold approximaion and projection) are fundamentaly differnt in how they reduce dimenion, even though both hel in visualizization the sigpliyfng high-dimenstional data. 
+
+*core concept*
+- pca is a inear (dimeninality reduction) while umap i non-linear dimenstinaliy reduciton 
+- pca finds new axes (principal component) that maximize variance while umap learn a graph-based manifold to preseve local and global structure. 
+- pca uses eigen decomposition on the covariance marix while umap use k-nearest neigbour and graph-based learnng. 
+
+and also umap caputre non-linear relationhip unlike pca. 
+
+*intuition*
+
+- pca finds stragiht-line directiosn that capute variance , like flattening a spere onto a plane. 
+
+- umap learn how data point are connected and tries to preerve that structure in a lower dimenstion. 
+
+
+
+*when should you use pca vs umap?*
+
+use pca when: 
+- you need interpretability 
+- you are working with linear relatinhipes (features are correlated)
+- you want to reduce dimensins before feeding data into ml model 
+
+use umap when: 
+
+- you want to visualize high-dimensinal data while preserving clusers and relatioships. 
+
+- your data is complex, non-linar structreus eg images, genomics word embeddings
+
+- you are woring on clusering problems eg umap often helps improve clustering performance. 
+
+example 
+
+```py
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+import umap
+from sklearn.datasets import load_digits
+
+# Load a high-dimensional dataset (handwritten digits, 64 features)
+digits = load_digits()
+X = digits.data
+y = digits.target
+
+# Apply PCA (reduce to 2D)
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X)
+
+# Apply UMAP (reduce to 2D)
+umap_model = umap.UMAP(n_components=2, random_state=42)
+X_umap = umap_model.fit_transform(X)
+
+# Plot PCA
+plt.figure(figsize=(12, 5))
+plt.subplot(1, 2, 1)
+plt.scatter(X_pca[:, 0], X_pca[:, 1], c=y, cmap='viridis', alpha=0.7)
+plt.title('PCA on Digits Dataset')
+
+# Plot UMAP
+plt.subplot(1, 2, 2)
+plt.scatter(X_umap[:, 0], X_umap[:, 1], c=y, cmap='viridis', alpha=0.7)
+plt.title('UMAP on Digits Dataset')
+
+plt.show()
+```
