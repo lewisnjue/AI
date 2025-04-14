@@ -3,14 +3,14 @@
 when training neural networks, weights intilizatin plays a crucial role in ensuring stable and efficient learning. Randomly initlalzed weights that are too large or too smal can cause problems like: 
 1. vanising gradients: 
 - if weights are too small, gradients shrink exponentially during backpropagation (eg in deep networks with sigmoid/tanh)
-- result: neurons stop learning ("die")
+- result: neurons stop learning ("die") // this is called dead neurons 
 
 2. exploding gradients: 
 - if weights are too large, gradients grow exponentially, calusing unstable updtes. 
 - result: model fails to converge. 
 
 3. Dead Neurons(ReLU):
-- in ReLu, if weights are intialzed such that pre-activations are negative, gradients become zero (no leanring). 
+- in ReLu, if weights are intialzed such that pre-activations are negative, gradients become zero (no leanring). // this results in gradient becoming zero -> dead neuron i hope you rember from make more 
 
 ## common initialzaton methods in pytorch 
 pytorch provides built-in methods to avoid thsee issues: 
