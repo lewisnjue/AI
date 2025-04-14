@@ -56,6 +56,9 @@ class CausalSelfAttention(nn.Module):
     It is possible to use torch.nn.MultiheadAttention here but I am including an
     explicit implementation here to show that there is nothing too scary here.
     """
+    """
+    when you have time please go throught this file more everyday to make sure you understand everythign 
+    """
 
     def __init__(self, config):
         super().__init__()
@@ -99,7 +102,7 @@ class Block(nn.Module):
         self.attn = CausalSelfAttention(config)
         self.ln_2 = nn.LayerNorm(config.n_embd)
         self.mlp = nn.ModuleDict(dict(
-            c_fc    = nn.Linear(config.n_embd, 4 * config.n_embd),
+            c_fc    = nn.Linear(config.n_embd, 4 * config.n_embd), # 4 is a nice number  there is not nee to have bias so you can remove it 
             c_proj  = nn.Linear(4 * config.n_embd, config.n_embd),
             act     = NewGELU(),
         ))

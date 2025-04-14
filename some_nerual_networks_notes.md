@@ -1,6 +1,5 @@
 a nearula netwokr is a compurational model designed to mimic how the human brain works by procss information , recognize pattersnand make decision . it consitns of layesr of interconnected nodes or neurons , that work together to analyze data , make predictions or classify inputs . 
 
-
 ## key components of a neural network 
 
 - neurons(nodes): the basic units that process information . each neuron takes inputs , processes them and passes the output to the next layer . 
@@ -13,7 +12,7 @@ a nearula netwokr is a compurational model designed to mimic how the human brain
  each connection between neurons has a weight that determines the influence of one neron on another . the network learns by adjusting these weights . 
 
 ## activation funtion:
- a mathematical funtion applied to each neron outpu to intorduce non -inearity , which allows the network to leanr complex patterns . 
+ a mathematical funtion applied to each neron output to intorduce non -linearity , which allows the network to lean complex patterns . 
 
 ## how a neral network works 
 
@@ -31,7 +30,7 @@ the nerual network works throught a process called forwad propagation and backpr
 
 ## backpropagraion :
 - the network then uses backpropagation , a process that adjsusts weights to minimize the error. 
-- the erro from the output is sent back throught the network and each weight is udated slightly to reduce the error.
+- the erro from the output is sent back throught the network and each weight is udated slightly to reduce the error. this is all abouts gradient check micrograd for more 
 - over many iterations the network learns to reduce the loss improvin its accuracy. 
 
 ## trainign a nerual network 
