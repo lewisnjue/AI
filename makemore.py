@@ -1,22 +1,8 @@
-"""
-you give this script some words (one per line) and it will generate more things like it.
-uses super state of the art Transformer AI tech
-this code is intended to be super hackable. tune it to your needs.
-
-Changes from minGPT:
-- I removed the from_pretrained function where we init with GPT2 weights
-- I removed dropout layers because the models we train here are small,
-  it's not necessary to understand at this stage and at this scale.
-- I removed weight decay and all of the complexity around what parameters are
-  and are not weight decayed. I don't believe this should make a massive
-  difference at the scale that we operate on here.
-"""
-
 import os
 import sys
 import time
-import math
-import argparse
+import math 
+import argparse # argparse is for passing argument when running the code very useful. 
 from dataclasses import dataclass
 from typing import List
 
@@ -28,7 +14,6 @@ from torch.utils.data.dataloader import DataLoader
 from torch.utils.tensorboard import SummaryWriter
 
 # -----------------------------------------------------------------------------
-
 @dataclass
 class ModelConfig:
     block_size: int = None # length of the input sequences of integers
@@ -60,9 +45,22 @@ class CausalSelfAttention(nn.Module):
     when you have time please go throught this file more everyday to make sure you understand everythign 
     """
 
+    """
+    self attention understanding rough work: 
+    buffer shape -> (1,1,8,8) -> assuming block sie is 8. 
+    c_proj -> (64,64) -> assuming number of embeddings is 64. 
+    rember than linear layer apply the operation onn last dimenstion 
+    c_att -> linear out of 3 * 64.
+    X->(B,T,C) t = 8, c = 64.
+    q,k,v = X-> (B,T,C*3).split(X,C,dim=-1) will output 3 tensors (B,T,C)  . this is the shape of each tensor. 
+    
+    bias -> 1,1,T,T
+    
+     """
+
     def __init__(self, config):
         super().__init__()
-        assert config.n_embd % config.n_head == 0
+        assert config.n_embd % config.n_head == 0 # bacause of multihead attetnion 
         # key, query, value projections for all heads, but in a batch
         self.c_attn = nn.Linear(config.n_embd, 3 * config.n_embd)
         # output projection
